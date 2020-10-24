@@ -27,6 +27,9 @@ public class CensusAnalyser {
         } catch (RuntimeException e) {
             throw new CensusAnalyserException(e.getMessage(),
                     CensusAnalyserException.ExceptionType.RUNTIME_EXCEPTION);
+        }catch (CSVBuliderException e) {
+            throw new CensusAnalyserException(e.getMessage(),
+                    e.type.name());
         }
     }
 
@@ -44,6 +47,9 @@ public class CensusAnalyser {
         } catch (RuntimeException e) {
             throw new CensusAnalyserException(e.getMessage(),
                     CensusAnalyserException.ExceptionType.RUNTIME_EXCEPTION);
+        } catch (CSVBuliderException e) {
+            throw new CensusAnalyserException(e.getMessage(),
+                    e.type.name());
         }
     }
 
