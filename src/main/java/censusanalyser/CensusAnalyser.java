@@ -20,8 +20,8 @@ public class CensusAnalyser {
     public int loadIndiaCensusData(String csvFilePath) throws CensusAnalyserException {
         try (Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));) {
             ICSVBulider csvBulider = CSVBuliderFactory.createCSVBulider();
-            Iterator<IndiaCensusCSV> censusCSVIterator = csvBulider.getCSVFileIterator(reader, IndiaCensusCSV.class);
-            return this.getCount(censusCSVIterator);
+            List<IndiaCensusCSV> censusCSVList = csvBulider.getCSVFileList(reader, IndiaCensusCSV.class);
+            return censusCSVList.size();
         } catch (IOException e) {
             throw new CensusAnalyserException(e.getMessage(),
                     CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
