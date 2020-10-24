@@ -134,4 +134,15 @@ public class CensusAnalyserTest {
         }catch (CensusAnalyserException e){}
 
     }
+    @Test
+    public void givenIndiastateCode_WhenSortedOnState_ShouldReturnSortedResult(){
+        try{
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.loadIndiastateCode(INDIA_STATE_CSV_FILE_PATH);
+            String sortedCensusData = censusAnalyser.getstateCodeWiswSortedCensusData();
+            IndiaStateCodeCSV[] codeCSVS = new Gson().fromJson(sortedCensusData,IndiaStateCodeCSV[].class);
+            Assert.assertEquals("AD",codeCSVS[0].stateCode);
+        }catch (CensusAnalyserException e){}
+    }
+
 }
