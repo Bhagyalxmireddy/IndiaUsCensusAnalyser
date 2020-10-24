@@ -130,4 +130,15 @@ public class CensusAnalyser {
         return sortedStateCensusJson;
 
     }
+
+    public String getStateCensusDensitySortedData() throws CensusAnalyserException {
+        if(censusStateMap == null || censusStateMap.size() == 0){
+            throw new CensusAnalyserException("No census data",CensusAnalyserException.ExceptionType.NO_CENSUS_DATA);
+        }
+        censusList.addAll(censusStateMap.values());
+        Comparator<IndiaCensusDAO> censusCSVComparator = Comparator.comparing(census -> census.densityPerSqKm);
+        this.sort(censusCSVComparator);
+        String sortedStateCensusJson = new Gson().toJson(this.censusList);
+        return sortedStateCensusJson;
+    }
 }
