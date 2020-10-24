@@ -136,8 +136,19 @@ public class CensusAnalyser {
             throw new CensusAnalyserException("No census data",CensusAnalyserException.ExceptionType.NO_CENSUS_DATA);
         }
         censusList.addAll(censusStateMap.values());
-        Comparator<IndiaCensusDAO> censusCSVComparator = Comparator.comparing(census -> census.densityPerSqKm);
+        Comparator<IndiaCensusDAO> censusCSVComparator = Comparator.comparing(census -> census.densityPerSqKm,Comparator.reverseOrder());
         this.sort(censusCSVComparator);
+        String sortedStateCensusJson = new Gson().toJson(this.censusList);
+        return sortedStateCensusJson;
+    }
+
+    public String getStateCensusAreaSortedData() throws CensusAnalyserException {
+        if(censusStateMap == null || censusStateMap.size() == 0){
+            throw new CensusAnalyserException("No census Data",CensusAnalyserException.ExceptionType.NO_CENSUS_DATA);
+        }
+        censusList.addAll(censusStateMap.values());
+        Comparator<IndiaCensusDAO> csvComparator = Comparator.comparing(census -> census.areaInSqKm,Comparator.reverseOrder());
+        this.sort(csvComparator);
         String sortedStateCensusJson = new Gson().toJson(this.censusList);
         return sortedStateCensusJson;
     }
