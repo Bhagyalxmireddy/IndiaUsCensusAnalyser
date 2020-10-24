@@ -141,7 +141,7 @@ public class CensusAnalyserTest {
             censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
             String populationSortedData = censusAnalyser.getStateCensusPopulationSortedData();
             IndiaCensusCSV[] censusCSVS = new Gson().fromJson(populationSortedData,IndiaCensusCSV[].class);
-            Assert.assertEquals("607688",censusCSVS[0].population);
+            Assert.assertEquals(607688,censusCSVS[0].population);
         }catch (CensusAnalyserException e){}
     }
     @Test
