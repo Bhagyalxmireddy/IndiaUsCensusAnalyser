@@ -10,6 +10,7 @@ public class CensusAnalyserTest {
     private static final String INDIA_CENSUS_CSV_FILE_PATH = "./src/test/resources/IndiaStateCensusData.csv";
     private static final String WRONG_CSV_FILE_PATH = "./src/main/resources/IndiaStateCensusData.csv";
     private static final String INDIA_STATE_CSV_FILE_PATH = "C:\\Users\\USER\\Downloads\\India&USCensusAnalyser\\src\\test\\resources\\IndiaStateCode.csv";
+    private static final String US_CENSUS_CSV_FILE_PATH = "C:\\Users\\USER\\Downloads\\IndiaUsCensusAnalyser\\src\\test\\resources\\USCensusData.csv";
 
     @Test
     public void givenIndianCensusCSVFileReturnsCorrectRecords() {
@@ -151,7 +152,7 @@ public class CensusAnalyserTest {
             censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
             String densitySortedData = censusAnalyser.getStateCensusDensitySortedData();
             IndiaCensusCSV[] censusCSVS = new Gson().fromJson(densitySortedData,IndiaCensusCSV[].class);
-            Assert.assertEquals(1102,censusCSVS[0].densityPerSqKm);
+            Assert.assertEquals(1102,censusCSVS[0].populationDensity);
         }catch (CensusAnalyserException e){}
 
     }
@@ -162,7 +163,7 @@ public class CensusAnalyserTest {
             censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
             String areaSortedData = censusAnalyser.getStateCensusAreaSortedData();
             IndiaCensusCSV[] censusCSVS = new Gson().fromJson(areaSortedData,IndiaCensusCSV[].class);
-            Assert.assertEquals(342239,censusCSVS[0].areaInSqKm);
+            Assert.assertEquals(342239,censusCSVS[0].totalArea);
         }catch (CensusAnalyserException e){}
     }
 
@@ -176,6 +177,12 @@ public class CensusAnalyserTest {
             Assert.assertEquals("AD",codeCSVS[0].stateCode);
         }catch (CensusAnalyserException e){}
     }
-
-
+    @Test
+    public void givenUSCensusData_ShouldReturnCorrectRecords(){
+        try {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            int noOfRecords = censusAnalyser.loadUSCensusData(US_CENSUS_CSV_FILE_PATH);
+            Assert.assertEquals(51, noOfRecords);
+        }catch (CensusAnalyserException e){}
+    }
 }
