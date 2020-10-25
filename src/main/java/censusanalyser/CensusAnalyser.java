@@ -175,4 +175,14 @@ public class CensusAnalyser {
     }
 
 
+    public String getStateUSDensitySortedData() throws CensusAnalyserException {
+        if(censusStateMap == null || censusStateMap.size() == 0){
+            throw new CensusAnalyserException("No census data",CensusAnalyserException.ExceptionType.NO_CENSUS_DATA);
+        }
+        censusList.addAll(censusStateMap.values());
+        Comparator<CensusDAO> censusCSVComparator = Comparator.comparing(census -> census.populationDensity,Comparator.reverseOrder());
+        this.sort(censusCSVComparator);
+        String sortedStateCensusJson = String.valueOf(new Gson().toJson(this.censusList));
+        return sortedStateCensusJson;
+    }
 }

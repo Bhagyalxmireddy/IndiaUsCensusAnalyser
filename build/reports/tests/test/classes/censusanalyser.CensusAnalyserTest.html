@@ -23,13 +23,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">17</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.707s</div>
+<div class="counter">0.742s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,10 +61,76 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="givenUSCensusData_WhenSortedOnPopulationDensity_ShouldReturnSortedResult"></a>
+<h3 class="failures">givenUSCensusData_WhenSortedOnPopulationDensity_ShouldReturnSortedResult</h3>
+<span class="code">
+<pre>java.lang.NumberFormatException: For input string: &quot;[{&quot;state&quot;:&quot;District of Columbia&quot;,&quot;stateCode&quot;:&quot;DC&quot;,&quot;population&quot;:601723,&quot;totalArea&quot;:177.0,&quot;populationDensity&quot;:3805.61},{&quot;state&quot;:&quot;New Jersey&quot;,&quot;stateCode&quot;:&quot;NJ&quot;,&quot;population&quot;:8791894,&quot;totalArea&quot;:22591.39,&quot;populationDensity&quot;:461.58},{&quot;state&quot;:&quot;Rhode Island&quot;,&quot;stateCode&quot;:&quot;RI&quot;,&quot;population&quot;:1052567,&quot;totalArea&quot;:4001.25,&quot;populationDensity&quot;:393.09},{&quot;state&quot;:&quot;Massachusetts&quot;,&quot;stateCode&quot;:&quot;MA&quot;,&quot;population&quot;:6547629,&quot;totalArea&quot;:27335.76,&quot;populationDensity&quot;:324.09},{&quot;state&quot;:&quot;Connecticut&quot;,&quot;stateCode&quot;:&quot;CT&quot;,&quot;population&quot;:3574097,&quot;totalArea&quot;:14357.38,&quot;populationDensity&quot;:284.98},{&quot;state&quot;:&quot;Maryland&quot;,&quot;stateCode&quot;:&quot;MD&quot;,&quot;population&quot;:5773552,&quot;totalArea&quot;:32131.23,&quot;populationDensity&quot;:229.65},{&quot;state&quot;:&quot;Delaware&quot;,&quot;stateCode&quot;:&quot;DE&quot;,&quot;population&quot;:897934,&quot;totalArea&quot;:6445.76,&quot;populationDensity&quot;:177.92},{&quot;state&quot;:&quot;New York&quot;,&quot;stateCode&quot;:&quot;NY&quot;,&quot;population&quot;:19378102,&quot;totalArea&quot;:141296.85,&quot;populationDensity&quot;:158.77},{&quot;state&quot;:&quot;Florida&quot;,&quot;stateCode&quot;:&quot;FL&quot;,&quot;population&quot;:18801310,&quot;totalArea&quot;:170311.79,&quot;populationDensity&quot;:135.37},{&quot;state&quot;:&quot;Pennsylvania&quot;,&quot;stateCode&quot;:&quot;PA&quot;,&quot;population&quot;:12702379,&quot;totalArea&quot;:119280.28,&quot;populationDensity&quot;:109.61},{&quot;state&quot;:&quot;Ohio&quot;,&quot;stateCode&quot;:&quot;OH&quot;,&quot;population&quot;:11536504,&quot;totalArea&quot;:116097.8,&quot;populationDensity&quot;:109.0},{&quot;state&quot;:&quot;California&quot;,&quot;stateCode&quot;:&quot;CA&quot;,&quot;population&quot;:37253956,&quot;totalArea&quot;:423967.74,&quot;populationDensity&quot;:92.32},{&quot;state&quot;:&quot;Illinois&quot;,&quot;stateCode&quot;:&quot;IL&quot;,&quot;population&quot;:12830632,&quot;totalArea&quot;:149995.52,&quot;populationDensity&quot;:89.23},{&quot;state&quot;:&quot;Hawaii&quot;,&quot;stateCode&quot;:&quot;HI&quot;,&quot;population&quot;:1360301,&quot;totalArea&quot;:28313.05,&quot;populationDensity&quot;:81.78},{&quot;state&quot;:&quot;Virginia&quot;,&quot;stateCode&quot;:&quot;VA&quot;,&quot;population&quot;:8001024,&quot;totalArea&quot;:110786.64,&quot;populationDensity&quot;:78.22},{&quot;state&quot;:&quot;North Carolina&quot;,&quot;stateCode&quot;:&quot;NC&quot;,&quot;population&quot;:9535483,&quot;totalArea&quot;:139391.09,&quot;populationDensity&quot;:75.71},{&quot;state&quot;:&quot;Indiana&quot;,&quot;stateCode&quot;:&quot;IN&quot;,&quot;population&quot;:6483802,&quot;totalArea&quot;:94326.27,&quot;populationDensity&quot;:69.88},{&quot;state&quot;:&quot;Michigan&quot;,&quot;stateCode&quot;:&quot;MI&quot;,&quot;population&quot;:9883640,&quot;totalArea&quot;:250487.02,&quot;populationDensity&quot;:67.49},{&quot;state&quot;:&quot;Georgia&quot;,&quot;stateCode&quot;:&quot;GA&quot;,&quot;population&quot;:9687653,&quot;totalArea&quot;:153910.54,&quot;populationDensity&quot;:65.02},{&quot;state&quot;:&quot;Tennessee&quot;,&quot;stateCode&quot;:&quot;TN&quot;,&quot;population&quot;:6346105,&quot;totalArea&quot;:109153.19,&quot;populationDensity&quot;:59.42},{&quot;state&quot;:&quot;South Carolina&quot;,&quot;stateCode&quot;:&quot;SC&quot;,&quot;population&quot;:4625364,&quot;totalArea&quot;:82932.75,&quot;populationDensity&quot;:59.42},{&quot;state&quot;:&quot;New Hampshire&quot;,&quot;stateCode&quot;:&quot;NH&quot;,&quot;population&quot;:1316470,&quot;totalArea&quot;:24214.23,&quot;populationDensity&quot;:56.76},{&quot;state&quot;:&quot;Kentucky&quot;,&quot;stateCode&quot;:&quot;KY&quot;,&quot;population&quot;:4339367,&quot;totalArea&quot;:104655.8,&quot;populationDensity&quot;:42.43},{&quot;state&quot;:&quot;Wisconsin&quot;,&quot;stateCode&quot;:&quot;WI&quot;,&quot;population&quot;:5686986,&quot;totalArea&quot;:169634.97,&quot;populationDensity&quot;:40.54},{&quot;state&quot;:&quot;Louisiana&quot;,&quot;stateCode&quot;:&quot;LA&quot;,&quot;population&quot;:4533372,&quot;totalArea&quot;:135658.83,&quot;populationDensity&quot;:40.5},{&quot;state&quot;:&quot;Washington&quot;,&quot;stateCode&quot;:&quot;WA&quot;,&quot;population&quot;:6724540,&quot;totalArea&quot;:184660.98,&quot;populationDensity&quot;:39.07},{&quot;state&quot;:&quot;Texas&quot;,&quot;stateCode&quot;:&quot;TX&quot;,&quot;population&quot;:25145561,&quot;totalArea&quot;:695662.15,&quot;populationDensity&quot;:37.18},{&quot;state&quot;:&quot;Alabama&quot;,&quot;stateCode&quot;:&quot;AL&quot;,&quot;population&quot;:4779736,&quot;totalArea&quot;:135767.46,&quot;populationDensity&quot;:36.45},{&quot;state&quot;:&quot;Missouri&quot;,&quot;stateCode&quot;:&quot;MO&quot;,&quot;population&quot;:5988927,&quot;totalArea&quot;:180540.41,&quot;populationDensity&quot;:33.63},{&quot;state&quot;:&quot;West Virginia&quot;,&quot;stateCode&quot;:&quot;WV&quot;,&quot;population&quot;:1852994,&quot;totalArea&quot;:62755.56,&quot;populationDensity&quot;:29.77},{&quot;state&quot;:&quot;Vermont&quot;,&quot;stateCode&quot;:&quot;VT&quot;,&quot;population&quot;:625741,&quot;totalArea&quot;:24906.28,&quot;populationDensity&quot;:26.22},{&quot;state&quot;:&quot;Minnesota&quot;,&quot;stateCode&quot;:&quot;MN&quot;,&quot;population&quot;:5303925,&quot;totalArea&quot;:225162.93,&quot;populationDensity&quot;:25.71},{&quot;state&quot;:&quot;Mississippi&quot;,&quot;stateCode&quot;:&quot;MS&quot;,&quot;population&quot;:2967297,&quot;totalArea&quot;:125437.83,&quot;populationDensity&quot;:24.4},{&quot;state&quot;:&quot;Arizona&quot;,&quot;stateCode&quot;:&quot;AZ&quot;,&quot;population&quot;:6392017,&quot;totalArea&quot;:295233.74,&quot;populationDensity&quot;:21.74},{&quot;state&quot;:&quot;Arkansas&quot;,&quot;stateCode&quot;:&quot;AR&quot;,&quot;population&quot;:2915918,&quot;totalArea&quot;:137731.91,&quot;populationDensity&quot;:21.62},{&quot;state&quot;:&quot;Oklahoma&quot;,&quot;stateCode&quot;:&quot;OK&quot;,&quot;population&quot;:3751351,&quot;totalArea&quot;:181037.37,&quot;populationDensity&quot;:21.12},{&quot;state&quot;:&quot;Iowa&quot;,&quot;stateCode&quot;:&quot;IA&quot;,&quot;population&quot;:3046355,&quot;totalArea&quot;:145746.02,&quot;populationDensity&quot;:21.04},{&quot;state&quot;:&quot;Colorado&quot;,&quot;stateCode&quot;:&quot;CO&quot;,&quot;population&quot;:5029196,&quot;totalArea&quot;:269601.56,&quot;populationDensity&quot;:18.73},{&quot;state&quot;:&quot;Maine&quot;,&quot;stateCode&quot;:&quot;ME&quot;,&quot;population&quot;:1328361,&quot;totalArea&quot;:91633.17,&quot;populationDensity&quot;:16.64},{&quot;state&quot;:&quot;Oregon&quot;,&quot;stateCode&quot;:&quot;OR&quot;,&quot;population&quot;:3831074,&quot;totalArea&quot;:254799.43,&quot;populationDensity&quot;:15.41},{&quot;state&quot;:&quot;Kansas&quot;,&quot;stateCode&quot;:&quot;KS&quot;,&quot;population&quot;:2853118,&quot;totalArea&quot;:213100.13,&quot;populationDensity&quot;:13.47},{&quot;state&quot;:&quot;Utah&quot;,&quot;stateCode&quot;:&quot;UT&quot;,&quot;population&quot;:2763885,&quot;totalArea&quot;:219882.07,&quot;populationDensity&quot;:12.97},{&quot;state&quot;:&quot;Nevada&quot;,&quot;stateCode&quot;:&quot;NV&quot;,&quot;population&quot;:2700551,&quot;totalArea&quot;:286379.91,&quot;populationDensity&quot;:9.5},{&quot;state&quot;:&quot;Nebraska&quot;,&quot;stateCode&quot;:&quot;NE&quot;,&quot;population&quot;:1826341,&quot;totalArea&quot;:200330.05,&quot;populationDensity&quot;:9.19},{&quot;state&quot;:&quot;Idaho&quot;,&quot;stateCode&quot;:&quot;ID&quot;,&quot;population&quot;:1567582,&quot;totalArea&quot;:216442.74,&quot;populationDensity&quot;:7.34},{&quot;state&quot;:&quot;New Mexico&quot;,&quot;stateCode&quot;:&quot;NM&quot;,&quot;population&quot;:2059179,&quot;totalArea&quot;:314917.66,&quot;populationDensity&quot;:6.56},{&quot;state&quot;:&quot;South Dakota&quot;,&quot;stateCode&quot;:&quot;SD&quot;,&quot;population&quot;:814180,&quot;totalArea&quot;:199728.84,&quot;populationDensity&quot;:4.13},{&quot;state&quot;:&quot;North Dakota&quot;,&quot;stateCode&quot;:&quot;ND&quot;,&quot;population&quot;:672591,&quot;totalArea&quot;:183107.94,&quot;populationDensity&quot;:3.75},{&quot;state&quot;:&quot;Montana&quot;,&quot;stateCode&quot;:&quot;MT&quot;,&quot;population&quot;:989415,&quot;totalArea&quot;:380831.38,&quot;populationDensity&quot;:2.63},{&quot;state&quot;:&quot;Wyoming&quot;,&quot;stateCode&quot;:&quot;WY&quot;,&quot;population&quot;:563626,&quot;totalArea&quot;:253334.72,&quot;populationDensity&quot;:2.24},{&quot;state&quot;:&quot;Alaska&quot;,&quot;stateCode&quot;:&quot;AK&quot;,&quot;population&quot;:710231,&quot;totalArea&quot;:1723338.01,&quot;populationDensity&quot;:0.46}]&quot;
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.lang.Double.parseDouble(Double.java:538)
+	at java.lang.Double.valueOf(Double.java:502)
+	at censusanalyser.CensusAnalyserTest.givenUSCensusData_WhenSortedOnPopulationDensity_ShouldReturnSortedResult(CensusAnalyserTest.java:203)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(Thread.java:748)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -75,89 +141,9 @@
 </tr>
 </thead>
 <tr>
-<td class="success">givenIndiaCensusData_WhenSortedOnArea_ShouldReturnSortedResult</td>
-<td class="success">0.592s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaCensusData_WhenSortedOnDensity_ShouldReturnSortedResult</td>
-<td class="success">0.072s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaCensusData_WhenSortedOnPopulation_ShouldReturnSortedResult</td>
-<td class="success">0.053s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaCensusData_WhenSortedOnState_ShouldReturnSortedResult</td>
-<td class="success">0.056s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaCensusData_WithCorrectFileButHeadereIncorrect_ShouldThrowException</td>
-<td class="success">0.045s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaCensusData_WithCorrectFileDelimiterIncorrect_ShouldThrowException</td>
-<td class="success">0.049s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaCensusData_WithCorrectFileTypeIncorrect_ShouldThrowException</td>
-<td class="success">0.066s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaCensusData_WithWrongFile_ShouldThrowException</td>
-<td class="success">0.001s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaStateCode_WithCorrectFileButHeadereIncorrect_ShouldThrowException</td>
-<td class="success">0.049s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaStateCode_WithCorrectFileButIncorrectType_ShouldThrowException</td>
-<td class="success">0.038s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaStateCode_WithWrongFile_ShouldThrowException</td>
-<td class="success">0.009s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiaStatecode_WithCorrectFileDelimiterIncorrect_ShouldThrowException</td>
-<td class="success">0.062s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndianCensusCSVFileReturnsCorrectRecords</td>
-<td class="success">0.165s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndianStateCodeCSVFile_ShouldReturnsExactCount</td>
-<td class="success">0.041s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenIndiastateCode_WhenSortedOnState_ShouldReturnSortedResult</td>
-<td class="success">0.062s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenUSCensusData_ShouldReturnCorrectRecords</td>
-<td class="success">0.210s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">givenUSCensusData_WhenSortedOnState_ShouldReturnSortedResult</td>
-<td class="success">0.137s</td>
-<td class="success">passed</td>
+<td class="failures">givenUSCensusData_WhenSortedOnPopulationDensity_ShouldReturnSortedResult</td>
+<td class="failures">0.742s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
@@ -169,7 +155,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.3</a> at Oct 25, 2020 1:44:46 PM</p>
+<a href="http://www.gradle.org">Gradle 6.3</a> at Oct 25, 2020 2:05:08 PM</p>
 </div>
 </div>
 </body>
