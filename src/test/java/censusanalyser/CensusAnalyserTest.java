@@ -200,9 +200,9 @@ public class CensusAnalyserTest {
         try{
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.loadUSCensusData(US_CENSUS_CSV_FILE_PATH);
-            Double sortedCensusData = Double.valueOf(censusAnalyser.getStateUSDensitySortedData());
-            USCensusCSV[] codeCsv = new Gson().fromJson(Double.toString(sortedCensusData),USCensusCSV[].class);
-            Assert.assertEquals(java.util.Optional.of((Double) 3805.61), codeCsv[0].PopulationDensity);
+            String sortedCensusData = censusAnalyser.getStateUSDensitySortedData();
+            USCensusCSV[] codeCsv = new Gson().fromJson(sortedCensusData,USCensusCSV[].class);
+            Assert.assertEquals("3805.61", codeCsv[0].PopulationDensity);
         }catch (CensusAnalyserException e){}
     }
 

@@ -182,7 +182,7 @@ public class CensusAnalyser {
         censusList.addAll(censusStateMap.values());
         Comparator<CensusDAO> censusCSVComparator = Comparator.comparing(census -> census.populationDensity,Comparator.reverseOrder());
         this.sort(censusCSVComparator);
-        String sortedStateCensusJson = String.valueOf(new Gson().toJson(this.censusList));
+        String sortedStateCensusJson = new Gson().toJson(this.censusList);
         return sortedStateCensusJson;
     }
 }
