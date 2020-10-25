@@ -200,10 +200,21 @@ public class CensusAnalyserTest {
         try{
             CensusAnalyser censusAnalyser = new CensusAnalyser();
             censusAnalyser.loadUSCensusData(US_CENSUS_CSV_FILE_PATH);
-            String sortedCensusData = censusAnalyser.getStateUSDensitySortedData();
+            String sortedCensusData = censusAnalyser.getStateCensusDensitySortedData();
             USCensusCSV[] codeCsv = new Gson().fromJson(sortedCensusData,USCensusCSV[].class);
-            Assert.assertEquals("3805.61", codeCsv[0].PopulationDensity);
+            Assert.assertEquals("District of Columbia", codeCsv[0].state);
         }catch (CensusAnalyserException e){}
+    }
+    @Test
+    public void givenUSCensusData_WhenSortedOnTotalArea_ShouldReturnSortedResult(){
+        try{
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.loadUSCensusData(US_CENSUS_CSV_FILE_PATH);
+            String areaSortedData = censusAnalyser.getStateCensusAreaSortedData();
+            USCensusCSV[] codeCsv = new Gson().fromJson(areaSortedData,USCensusCSV[].class);
+            Assert.assertEquals("Alaska",codeCsv[0].state);
+
+        }catch (CensusAnalyserException e){ }
     }
 
 }
