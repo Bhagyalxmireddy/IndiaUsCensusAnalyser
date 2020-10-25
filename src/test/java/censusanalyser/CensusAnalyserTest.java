@@ -205,5 +205,18 @@ public class CensusAnalyserTest {
             Assert.assertEquals("3805.61", codeCsv[0].PopulationDensity);
         }catch (CensusAnalyserException e){}
     }
+    @Test
+    public void givenIndiaAndUSCensusData_WhenSortedOnDensity_ShouldReturnSortedResult(){
+        try{
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+            String indianCensusSortedData = censusAnalyser.getStateCensusDensitySortedData();
+            censusAnalyser.loadUSCensusData(US_CENSUS_CSV_FILE_PATH);
+            String usCensusSortedData = censusAnalyser.getStateCensusDensitySortedData();
+            IndiaCensusCSV[] indiaCensusCSV = new Gson().fromJson(indianCensusSortedData,IndiaCensusCSV[].class);
+            USCensusCSV[] usCensusCsv = new Gson().fromJson(usCensusSortedData,USCensusCSV[].class);
+            Assert.assertEquals("District of Columbia",usCensusCsv[0].state);
+        }catch (CensusAnalyserException e){}
+    }
 
 }
