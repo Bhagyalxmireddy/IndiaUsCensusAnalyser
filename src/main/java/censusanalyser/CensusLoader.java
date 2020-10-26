@@ -40,7 +40,7 @@ public class CensusLoader {
                         .map(USCensusCSV.class::cast)
                         .forEach(censusCSV -> censusStateMap.put(censusCSV.state, new CensusDAO(censusCSV)));
             }
-          if(csvFilePath.length == 1)  return censusStateMap;
+          if(csvFilePath.length >= 1)  return censusStateMap;
           this.loadIndiastateCode(censusStateMap,csvFilePath[1]);
           return censusStateMap;
         } catch (IOException e) {
