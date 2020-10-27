@@ -235,11 +235,8 @@ public class CensusAnalyserTest {
 
         } catch (CensusAnalyserException e) {
         }
-
     }
-
     @Test
-
     public void givenIndiaAndUSCensusData_WhenSortedOnDensity_ShouldReturnSortedResult() {
         try {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
@@ -253,8 +250,6 @@ public class CensusAnalyserTest {
         } catch (CensusAnalyserException e) {
         }
     }
-
-
 }
 
 
