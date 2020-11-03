@@ -16,7 +16,7 @@ public class CensusAnalyserTest {
     public void givenIndianCensusCSVFileReturnsCorrectRecords() {
         try {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
-            int numOfRecords = censusAnalyser.loadCensusData(CensusAnalyser.Country.INDIA,INDIA_CENSUS_CSV_FILE_PATH);
+            int numOfRecords = censusAnalyser.loadCensusData(CensusAnalyser.Country.INDIA);
             Assert.assertEquals(29, numOfRecords);
         } catch (CensusAnalyserException e) {
         }
@@ -74,7 +74,7 @@ public class CensusAnalyserTest {
     public void givenIndianStateCodeCSVFile_ShouldReturnsExactCount() {
         try {
             CensusAnalyser censusAnalyser = new CensusAnalyser();
-            int stateCode = censusAnalyser.loadCensusData(CensusAnalyser.Country.INDIA,INDIA_STATE_CSV_FILE_PATH,INDIA_CENSUS_CSV_FILE_PATH);
+            int stateCode = censusAnalyser.loadCensusData(CensusAnalyser.Country.INDIA,INDIA_STATE_CSV_FILE_PATH);
             Assert.assertEquals(37, stateCode);
         } catch (CensusAnalyserException e) {
             e.printStackTrace();
